@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIGC-QUANT's Newsletter</title>
+    <title>Subscribe to My Newsletter</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,50 +22,72 @@
         .subscribe-form {
             margin-top: 30px;
         }
-        input[type=email] {
+        input[type=email], input[type=text] {
             padding: 10px;
             width: 100%;
             margin-bottom: 10px;
         }
-        button {
+        button, .paypal-button {
             padding: 10px 20px;
             background-color: #007bff;
             color: white;
             border: none;
             cursor: pointer;
+            display: inline-block;
+            margin-bottom: 20px;
         }
-        button:hover {
-            background-color: #0056b3;
+        .paypal-button {
+            background-color: #00457a; /* PayPal blue */
+        }
+        .paypal-button:hover {
+            background-color: #003366;
         }
     </style>
 </head>
 <body>
+
     <div class="container">
-           <h1>欢迎订阅 AIGC-QUANT 的 Newsletter!</h1> <h1>Welcome to AIGC-QUANT's Newsletter!</h1><p>及时了解最新的 AIGC、机器学习、量化交易、统计学和研究进展与见解。</p>
-    <p>Stay updated with the latest AIGC, machine learning, QUANT, statistics and research news and insights.</p>
+        <h1>Subscribe to My Newsletter</h1>
+        <p>Stay updated with the latest news, insights, and exclusive content from our team.</p>
 
-    <p>掌握量化投资的精髓,让数据为你的投资导航!订阅我们的量化newsletter,获取最前沿的量化策略和深度行业洞察,助你在市场中抢占先机。立即加入,开启你的量化投资之旅!</p>
-    <p>Master the essence of quantitative investment and let data navigate your investment! Subscribe to our quantitative newsletter to obtain cutting-edge quantitative strategies and deep industry insights, helping you gain a first-mover advantage in the market. Join now and start your quantitative investment journey!</p>
+        <!-- 订阅表单 -->
+        <div class="subscribe-form">
+            <h2>Enter Your Details</h2>
+            <form id="subscriptionForm">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+                <!-- 这里可以添加更多字段，如国家、订阅类型等 -->
+            </form>
+            <button type="button" onclick="subscribe()">Subscribe Now</button>
+        </div>
 
-    <p>人工智能正在重塑世界,你准备好迎接未来了吗?我们的AI newsletter为你带来最新的人工智能技术突破和产业应用案例,助你把握这一革命性浪潮。订阅即刻启程,与AI共同进化!</p>
-    <p>Artificial intelligence is reshaping the world. Are you ready to embrace the future? Our AI newsletter brings you the latest breakthroughs in AI technology and industrial application cases, helping you seize this revolutionary wave. Subscribe now and evolve with AI!</p>
+        <!-- PayPal.Me 订阅按钮 -->
+        <div class="subscribe-form">
+            <h2>Pay for Subscription</h2>
+            <p>Select your subscription plan and click the button to proceed.</p>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="YOUR_BUTTON_ID">
+                <!-- 这里可以添加更多PayPal设置，如货币类型、订阅金额等 -->
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            </form>
+        </div>
 
-    <p>在瞬息万变的商业世界中,优化每一个决策至关重要。我们的运筹优化newsletter为你提供最前沿的优化理论和实践案例,助你在复杂多变的环境中找到最优解。现在订阅,让你的决策更具智慧!</p>
-    <p>In the ever-changing business world, optimizing every decision is crucial. Our operations research newsletter provides you with cutting-edge optimization theories and practical cases, helping you find the optimal solution in complex and changing environments. Subscribe now and make your decisions smarter!</p>
+        <script>
+            // JavaScript 函数来处理订阅表单提交
+            function subscribe() {
+                var name = document.getElementById("name").value;
+                var email = document.getElementById("email").value;
+                // 这里可以添加更多的验证和逻辑
 
-    <p>数据是新时代的原油,统计学是提炼数据价值的钥匙。订阅我们的统计newsletter,掌握最实用的统计理论和工具,让数据真正成为你的战略资产。即刻启程,开启数据驱动的崭新未来!</p>
-    <p>Data is the new oil in the new era, and statistics is the key to extracting value from data. Subscribe to our statistics newsletter and master the most practical statistical theories and tools, allowing data to truly become your strategic asset. Start now and open up a data-driven new future!</p>
+                // 显示确认信息或者直接重定向到PayPal
+                alert("Thank you, " + name + "! You will be redirected to PayPal to complete your subscription.");
+                // window.location.href = "https://www.paypal.me/aigchhc/subscribe?amount=5";
+            }
+        </script>
 
-    <p>想要在量化、AI、优化和统计领域保持领先?我们的newsletter是你不容错过的情报源泉。专家级的行业洞察、前沿技术解读、实用案例分析,为你的知识体系持续充电。</p>
-    <p>Want to stay ahead in the fields of quantitative analysis, AI, optimization, and statistics? Our newsletter is an intelligence source you can't miss. Expert-level industry insights, cutting-edge technology interpretations, and practical case analyses continuously charge your knowledge system.</p>
-
-    <div class="subscribe-form">
-        <h2>立即订阅 | Subscribe Now</h2>
-        <input type="email" placeholder="输入你的电子邮箱 | Enter your email address" required>
-        <button type="submit">注册 | Sign Up</button>
-        <p>点击这里访问 <a href="https://paypal.me/aigchhc">收款链接</a>。</p>
-        <p>Click here to visit the <a href="https://paypal.me/aigchhc">payment link</a>.</p>
     </div>
-</div>
+
 </body>
 </html>
